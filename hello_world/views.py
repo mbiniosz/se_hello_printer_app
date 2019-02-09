@@ -5,7 +5,7 @@ from flask import request
 
 
 moje_imie = "Marek"
-msg = "Hello World!"
+msg = "Witaj swiecie!"
 
 
 @app.route('/')
