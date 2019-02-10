@@ -1,0 +1,21 @@
+import unittest
+from hello_world import app
+from hello_world.formater import SUPPORTED
+
+
+class FlaskrTestCase(unittest.TestCase):
+    def setUp(self):
+        app.config['TESTING'] = True
+        self.app = app.test_client()
+
+    def test_outputs(self):
+        rv = self.app.get('/outputs')
+        ','.join(SUPPORTED) in rv.data
+
+    def test_msg_with_output(self):
+        rv = self.app.get('/?output=json')
+        self.assertEquals('{ "imie":"Marek", "mgs":Witaj swiecie!"}', rv.data)
+    def test_msg_with_given_output(self)
+
+<pre>rv = self.app.get(<font color="#8AE234"><b>&apos;/?output=json&apos;</b></font>)
+        self.assertEquals(<font color="#8AE234"><b>&apos;{ &quot;imie&quot;:&quot;Marek&quot;, &quot;mgs&quot;:Witaj swiecie!&quot;}&apos;</b></font>, rv.data)</pre>
